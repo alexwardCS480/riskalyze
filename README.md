@@ -1,2 +1,2 @@
 # Riskalyze Interview Challenge
-See the proved PDF for a detailed description
+See the proved PDF for a detailed description.
