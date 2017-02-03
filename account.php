@@ -26,22 +26,22 @@ var userInput = [];
 // add items to list on checkbox click
 function update_array(checkbox)
 {
-		// add item to list if checkbox clicked
+	// add item to list if checkbox clicked
         if (checkbox.checked)
         {
             userInput.push(checkbox.value);
         }
-		// remove item from list if unchecked
+	// remove item from list if unchecked
         else
         {
-			var index = userInput.indexOf(checkbox.value);
+	    var index = userInput.indexOf(checkbox.value);
             if (index > -1) 
-			{
-    			userInput.splice(index, 1);
-			}
+	    {
+	     	userInput.splice(index, 1);
+	    }
         }
 
-		// display item list to user
+	// display item list to user
         var text = document.getElementById("screen_tmp_data").innerHTML  = "";
         for (var i in userInput)
         {
@@ -61,14 +61,15 @@ function call_php_function()
    //call the php account_helper.php file, pass post data to call specific function
    $.ajax({
       url:'account_helper.php',
-	  type: 'post',
-	  data: { "update_screens": "1", "input": userInput},
+      type: 'post',
+      data: { "update_screens": "1", "input": userInput},
       complete: function (response) 
-	  {
+      {
           document.getElementById("sql_tmp_data").innerHTML = document.getElementById("sql_tmp_data").innerHTML + (response.responseText);
       },
-      error: function () {
-         echo ("error");
+      error: function () 
+      {
+       	   echo ("error");
       }
   });
   return false;
